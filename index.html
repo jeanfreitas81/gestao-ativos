@@ -1820,16 +1820,11 @@
     function openModal(id) {
       if (id === 'modal-preventive') {
         populateAssetSelect();
+        // Sugerir data de hoje + 7 dias
         const d = new Date();
         d.setDate(d.getDate() + 7);
         document.getElementById('os-date').value = d.toISOString().split('T')[0];
       }
-
-    // Apenas abre o modal sem resetar os dados preenchidos pela edição
-      const modal = document.getElementById(id);
-      modal.classList.remove('hidden');
-      modal.classList.add('flex');
-    }
 
       if (id === 'modal-asset') {
         document.getElementById('form-asset').reset();
